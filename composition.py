@@ -9,6 +9,8 @@ class Car:
     
     def __str__(self) -> str:
         return f"{self.year} {self.make} {self.model}"
+    def __repr__(self):
+        return f"Car({self.make}, {self.model}, {self.year}, {repr(self.engine)})"
     
 class Engine:
     def __init__(self, configuration, displacement, horsepower, torque):
@@ -17,6 +19,11 @@ class Engine:
         self.horsepower = horsepower
         self.torque = torque
 
+    def __str__(self):
+        return f"{self.configuration}, {self.displacement}, {self.horsepower}, {self.torque}"
+    def __repr__(self):
+        return f"Engine({self.configuration}, {self.displacement}, {self.horsepower}, {self.torque})"
+    
     def ignite(self):
         print("vroom vroom whee hee hohoho teehee chugga chugga choo choo grahhh")
     
@@ -27,3 +34,6 @@ myCar = Car("Mazda", "Mazda3", "1378", myEngine)
 
 print(myCar)
 myCar.engine.ignite()
+#       ^^ like so
+
+print(repr(myCar))
