@@ -1,0 +1,76 @@
+BoxLayout:
+    orientation: "vertical"
+
+    Label:
+        text: "enter your name: "
+
+    TextInput:
+        id: user_input
+        multiline: False
+
+    Button:
+        text: "greet"
+        on_press: output_label.text = "hello " + user_input.text
+
+    Label:
+        id: output_label
+        text: "welcome"
+
+    CheckBox:
+        id: check_box
+        active: True
+    Label:
+        text: "check me"
+
+    Slider:
+        id: sliderr
+        min: 0
+        max: 100
+        value: 50
+
+    Switch:
+        id: Switch
+    Label:
+        text: "toggle me !!!"
+    
+    ProgressBar:
+        max: 100
+        value: 33
+
+    Image:
+        source: 'awfewaf.png'
+        allow_stretch: True
+        keep_ratio: True
+
+GridLayout:
+    cols: 3
+
+    Button:
+        text: '1'
+    Button:
+        text: '2'
+    Button:
+        text: '3'
+
+FloatLayout:
+    Button:
+        text: "top left"
+        size_hint: .2, .1
+        post_hint: {"x": .4, "y": .45}
+
+ScreenManager:
+    id: screen_manager
+    transition: NoTransition()
+
+    Screen:
+        name: "home"
+
+        Button:
+            text: "waefwaefwaef"
+            on_press: screen_manager.current = game
+
+    Screen:
+        name: "game"
+
+        Button:
+            text: "ewwww"
